@@ -3,6 +3,7 @@
     <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render 'shared/devisemes' %>
       <div class="form-group">
         <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
       </div>
