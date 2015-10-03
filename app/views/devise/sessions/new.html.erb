@@ -1,5 +1,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
+
     <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
