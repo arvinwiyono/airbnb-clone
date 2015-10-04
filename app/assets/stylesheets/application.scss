@@ -2,6 +2,107 @@
 @import "bootstrap";
 @import "toastr";
 
+body{
+	color: #565A5C;
+	background-color: #F8F8F8;
+}
+
+.panel{
+	border-radius: 0px;
+}
+
+.container{
+	width: 80%;
+}
+
+.navbar-default{
+	background-color: #FFFFFF;
+	.navbar-brand{
+		color: #FF5A5F;
+		font-size: 2em;
+		font-weight: 500;
+	}
+}
+
+.btn-primary.btn.facebook-btn{
+	border: 1px solid #3E5B99;
+	border-radius: 4px;
+	font-weight: 200;
+	background-color: #3E5B99;
+	color: #FFF;
+	padding: 10px 25px;
+
+	&:hover, &:focus{
+		border-color: #486AB2;
+		border-bottom-color: #243559;
+		background-color: #486AB2;
+		outline:none;
+	}
+	&:active{
+		border-color: #304879;
+		background-color: #304879;
+		outline:none;
+	}
+}
+
+.btn-primary.btn{
+	border: 1px solid #FF5A5F;
+	border-radius: 4px;
+	font-weight: 400;
+	background-color: #FF5A5F;
+	color: #FFF;
+	padding: 10px 25px;
+
+	&:hover, &:focus{
+		border-color: #FF7E82;
+		border-bottom-color: #FA0008;
+		background-color: #FF7E82;
+		outline:none;
+	}
+
+	&:active{
+		border-color: #E00007;
+		background-color: #E00007;
+		outline: none;
+	}
+}
+
+.btn-default.btn{
+	width: 100%;
+	border-radius: 2px;
+	padding: 10px 0;
+	margin-top: 10px;
+}
+
+.panel-default .panel-heading{
+	color: #565A5C;
+	background-color: #EDEFED;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.row-space-1{
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.row-space-2{
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.row-space-3{
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.description{
+	color: #575757;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 25px;
+}
+
 .avatar-small{
 	width: 28px;
 }
