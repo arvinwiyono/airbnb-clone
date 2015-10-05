@@ -44,8 +44,8 @@ Rails.application.configure do
     address: 'smtp.mandrillapp.com',
     port: 587,
     enable_starttls_auto: true,
-    user_name: 'arvinwiyono@gmail.com',
-    password: 'f-ogXvcWFPRo_RIQRxtIMg',
+    user_name: 'airbnbclone@gmail.com',
+    password: 'eRK49eRTxLRqeejfhq7cig',
     authentication: 'login'
   }
 end
