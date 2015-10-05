@@ -17,3 +17,4 @@
 /tmp
 
 # Ignore configuration files.
+.env
