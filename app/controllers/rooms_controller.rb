@@ -42,7 +42,7 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(
-        :home_type, :room_type, :acccomodate,
+        :home_type, :room_type, :accomodate,
         :bedroom, :bathroom, :listing_name,
         :summary, :address, :is_tv, :is_kitchen,
         :is_air, :is_heating, :is_internet, :price, :active
