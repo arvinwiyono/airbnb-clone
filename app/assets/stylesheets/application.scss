@@ -3,8 +3,11 @@
 @import "toastr";
 
 body{
-	color: #565A5C;
-	background-color: #F8F8F8;
+  color: #565A5C;
+  background-color: #F8F8F8;
+  .main-container{
+    padding-top: 20px;
+  }
 }
 
 .panel{
@@ -24,56 +27,13 @@ body{
 	}
 }
 
-.btn-primary.btn.facebook-btn{
-	border: 1px solid #3E5B99;
-	border-radius: 4px;
-	font-weight: 200;
-	background-color: #3E5B99;
-	color: #FFF;
-	padding: 10px 25px;
-
-	&:hover, &:focus{
-		border-color: #486AB2;
-		border-bottom-color: #243559;
-		background-color: #486AB2;
-		outline:none;
-	}
-	&:active{
-		border-color: #304879;
-		background-color: #304879;
-		outline:none;
-	}
-}
-
-
-.btn-primary.btn.google-btn{
-  border: 1px solid #DD4B39;
-  border-radius: 4px;
-  font-weight: 200;
-  background-color: #DD4B39;
-  color: #FFF;
-  padding: 10px 25px;
-
-  &:hover, &:focus{
-    border-color: #E05D4D;
-    border-bottom-color: #852D22;
-    background-color: #E05D4D;
-    outline:none;
-  }
-  &:active{
-    border-color: #852D22;
-    background-color: #852D22;
-    outline:none;
-  }
-}
-
 .btn-primary.btn{
 	border: 1px solid #FF5A5F;
 	border-radius: 4px;
-	font-weight: 400;
 	background-color: #FF5A5F;
 	color: #FFF;
 	padding: 10px 25px;
+    margin-right: 20px;
 
 	&:hover, &:focus{
 		border-color: #FF7E82;
@@ -81,7 +41,6 @@ body{
 		background-color: #FF7E82;
 		outline:none;
 	}
-
 	&:active{
 		border-color: #E00007;
 		background-color: #E00007;
@@ -96,6 +55,46 @@ body{
 	margin-top: 10px;
 }
 
+.btn-primary.btn.facebook-btn{
+  border: 1px solid #3E5B99;
+  background-color: #3E5B99;
+  color: #FFF;
+
+  &:hover, &:focus{
+    border-color: #486AB2;
+    border-bottom-color: #243559;
+    background-color: #486AB2;
+  }
+  &:active{
+    border-color: #304879;
+    background-color: #304879;
+  }
+}
+
+.btn-primary.btn.google-btn{
+  border: 1px solid #DD4B39;
+  background-color: #DD4B39;
+  color: #FFF;
+
+  &:hover, &:focus{
+    border-color: #E05D4D;
+    border-bottom-color: #852D22;
+    background-color: #E05D4D;
+  }
+  &:active{
+    border-color: #852D22;
+    background-color: #852D22;
+  }
+}
+
+.google-btn, .facebook-btn{
+  width: 230px;
+  img{
+    position: relative;
+    top: -2px;
+    right: 5px;
+  }
+}
 .panel-default .panel-heading{
 	color: #565A5C;
 	background-color: #EDEFED;
