@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :omniauthable
   validates :fullname, length: { maximum: 50 }, presence: true  
 
+  has_many :rooms
+
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
     if user
