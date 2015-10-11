@@ -95,6 +95,10 @@ body{
     right: 5px;
   }
 }
+
+.google-row{
+  margin-top: 15px;
+}
 .panel-default .panel-heading{
 	color: #565A5C;
 	background-color: #EDEFED;
@@ -175,4 +179,51 @@ body{
   color: #565A5C;
   font-weight: bold;
   text-decoration: none;
+}
+
+label {
+  color: #565A5C;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+select{
+  color: #565A5C;
+  background-color: #FFF;
+  width: 100%;
+  border: 1px solid #CCC;
+  border-radius: 2px;
+  padding: 10px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.select:before{
+  content: '\25bc';
+  font-size: 1.2em;
+  position: absolute;
+  color: #82888A;
+  top: 42px;
+  right: 30px;
+  transform: scale(0.84, 0.5);
+}
+
+input[type=checkbox]{
+  height: 1.25em;
+  width: 1.25em;
+  margin-right: 5px;
+  vertical-align: top;
+  border: 1px solid #C4C4C4;
+  border-radius: 2px;
+}
+
+input[type=checkbox]:checked:before{
+  content: '\2713';
+  position: absolute;
+  font-size: 0.95em;
+  text-align: center;
+  width: 1.25em;
+  color: #FF5a5F;
 }
