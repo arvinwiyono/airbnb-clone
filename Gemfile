@@ -22,6 +22,10 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+# This gem requires ImageMagick to be installed
+# Run sudo apt-get install imagemagick or visit https://github.com/thoughtbot/paperclip#image-processor
+gem 'paperclip'
+
 group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
