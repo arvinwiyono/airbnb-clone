@@ -25,7 +25,7 @@ class RoomsController < ApplicationController
       end
 
       @photos = @room.photos
-      redirect_to edit_room_path (@room), notice: "Saved"
+      redirect_to edit_room_path (@room), notice: "Saved..."
     else
       render :new
     end
@@ -38,7 +38,7 @@ class RoomsController < ApplicationController
           @room.photos.create(image: image)
         end
       end
-      redirect_to edit_room_path(@room), notice: "Updated"
+      redirect_to edit_room_path(@room), notice: "Updated..."
     else
       render :edit
     end
