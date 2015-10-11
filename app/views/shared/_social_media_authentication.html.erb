@@ -1,4 +1,8 @@
-<% facebook_logo = "http://1.bp.blogspot.com/-WSdqH3gMHDk/U-xndvvQYrI/AAAAAAAABwg/9OLHbIjiTF8/s1600/facebook%2Blogo%2Bpng%2Btransparent%2Bbackground.png"  %>
-<% google_logo = "https://lh3.googleusercontent.com/-IMGb4CkWC98/VeXR6rWlM1I/AAAAAAAA7c4/aC-I28R6_ps/s506/GooglePlus-logos-02.png" %>
-<%= link_to image_tag(facebook_logo, size: '20') + " Login with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary facebook-btn" %>
-<%= link_to image_tag(google_logo, size: '25') + " Login with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary google-btn" %>
+<% facebook_logo = "fb-logo.png"  %>
+<% google_logo = "google-logo" %>
+<div class="row">
+  <%= link_to image_tag(facebook_logo, size: '20') + " Login with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary facebook-btn" %>
+</div>
+<div class="row google-row">
+  <%= link_to image_tag(google_logo, size: '25') + " Login with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary google-btn" %>
+</div>
