@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'uglifier', '>= 1.3.0'
@@ -27,6 +26,7 @@ gem 'omniauth-google-oauth2'
 gem 'paperclip'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug'
   gem 'dotenv-rails'
 end
@@ -36,3 +36,6 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+	gem 'pg'
+end
