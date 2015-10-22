@@ -4,7 +4,7 @@
 		<!-- Image -->
 		<div class="row">
 			<div class="col-md-12">
-				<%= image_tag @photos[0].image.url, class: "img-responsive" %>
+				<%= image_tag @photos[0].image.url, class: "img-responsive" if @photos.length > 0 %>
 			</div>
 		</div>
 
@@ -64,6 +64,67 @@
 			<div class="col-md-12">
 				<h2>About This Listing</h2>
 				<p><%= @room.summary%></p>
+			</div>
+		</div>
+
+		<!-- Amenities -->
+		<div class="row">
+			<div class="col-md-2">
+				<p>Amenities</p>
+			</div>
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' unless @room.is_tv%>">TV</li>
+							<li class="<%= 'text-line-through' unless @room.is_kitchen%>">Kitchen</li>
+							<li class="<%= 'text-line-through' unless @room.is_internet%>">Internet</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' unless @room.is_heating %>">Heating</li>
+							<li class="<%= 'text-line-through' unless @room.is_air %>">Air Conditioning</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Carousel -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <% if @photos %>
+					  <ol class="carousel-indicators">
+					  	<% @photos.each do |photo| %>
+					    	<li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
+					    <% end%>
+					  </ol>
+				  <% end %>
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <% if @photos %>
+				    	<% @photos.each do |photo| %>
+						    <div class="item <%= 'active' if photo.id.equal? @photos[0].id %>">
+						      <%= image_tag photo.image.url()%>
+						    </div>
+					    <% end %>
+				    <% end %>
+				  </div>
+
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+
 			</div>
 		</div>
 	</div>
