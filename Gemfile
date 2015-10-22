@@ -25,6 +25,8 @@ gem 'omniauth-google-oauth2'
 # Run sudo apt-get install imagemagick or visit https://github.com/thoughtbot/paperclip#image-processor
 gem 'paperclip'
 
+gem 'geocoder'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
