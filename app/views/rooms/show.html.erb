@@ -1,2 +1,70 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div class="panel panel-default">
+	<div class="panel-body">
+		
+		<!-- Image -->
+		<div class="row">
+			<div class="col-md-12">
+				<%= image_tag @photos[0].image.url, class: "img-responsive" %>
+			</div>
+		</div>
+
+		<br/>
+		<!-- Main Info -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<%= image_tag avatar_url(@room.user), class:"img-circle avatar-large" %>
+						<br/><br/>
+						<%= @room.user.fullname %>
+					</div>
+					<div class="col-md-9">
+						<h4><%= @room.listing_name %></h4>
+						<%= @room.address %>
+
+						<div class="row text-centre row-space-1">
+							<div class="col-sm-3">
+								<i class="fa fa-home fa-2x"></i>
+							</div>
+							<div class="col-sm-3">
+								<i class="fa fa-user fa-2x"></i>
+							</div>
+							<div class="col-sm-3">
+								<i class="fa fa-bed fa-2x"></i>
+							</div>
+							<div class="col-sm-3">
+								<i class="fa fa-ship fa-2x"></i>
+							</div>
+						</div>
+						<div class="row text-centre row-space-1">
+							<div class="col-sm-3">
+								<%= @room.home_type %>
+							</div>
+							<div class="col-sm-3">
+								<%= @room.accomodate %> <%= @room.accomodate > 1 ? "Guests":"Guest"  %>
+							</div>
+							<div class="col-sm-3">
+								<%= @room.bedroom %> <%= @room.bedroom > 1 ? "Bedrooms":"Bedroom"  %>
+							</div>
+							<div class="col-sm-3">
+								<%= @room.bathroom %> <%= @room.bedroom > 1 ? "Bathrooms":"Bathroom"  %>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<!-- Reservation form -->
+			</div>
+		</div>
+
+		<!-- About -->
+		<div class="row">
+			<div class="col-md-12">
+				<h2>About This Listing</h2>
+				<p><%= @room.summary%></p>
+			</div>
+		</div>
+	</div>
+</div>
