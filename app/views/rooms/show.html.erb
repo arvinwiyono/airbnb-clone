@@ -3,7 +3,7 @@
 		
 		<!-- Image -->
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-8 col-md-offset-2">
 				<%= image_tag @photos[0].image.url, class: "img-responsive" if @photos.length > 0 %>
 			</div>
 		</div>
@@ -70,22 +70,24 @@
 		<!-- Amenities -->
 		<div class="row">
 			<div class="col-md-2">
-				<p>Amenities</p>
+				<h2>Amenities</h2>
 			</div>
-			<div class="col-md-10">
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="amenities">
-							<li class="<%= 'text-line-through' unless @room.is_tv%>">TV</li>
-							<li class="<%= 'text-line-through' unless @room.is_kitchen%>">Kitchen</li>
-							<li class="<%= 'text-line-through' unless @room.is_internet%>">Internet</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="amenities">
-							<li class="<%= 'text-line-through' unless @room.is_heating %>">Heating</li>
-							<li class="<%= 'text-line-through' unless @room.is_air %>">Air Conditioning</li>
-						</ul>
+			<div class="row">
+				<div class="col-md-10">
+					<div class="row">
+						<div class="col-md-6">
+							<ul class="amenities">
+								<li class="<%= 'text-line-through' unless @room.is_tv%>">TV</li>
+								<li class="<%= 'text-line-through' unless @room.is_kitchen%>">Kitchen</li>
+								<li class="<%= 'text-line-through' unless @room.is_internet%>">Internet</li>	
+							</ul>
+						</div>
+						<div class="col-md-6">
+							<ul class="amenities">
+								<li class="<%= 'text-line-through' unless @room.is_heating %>">Heating</li>
+								<li class="<%= 'text-line-through' unless @room.is_air %>">Air Conditioning</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -93,7 +95,7 @@
 
 		<!-- Carousel -->
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-8 col-md-offset-2">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				  <!-- Indicators -->
 				  <% if @photos %>
