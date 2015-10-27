@@ -167,5 +167,24 @@
 
 			</div>
 		</div>
+
+		<!-- Close by Rooms -->
+		<h3>Nearby</h3>
+		<div class="row">
+			<!-- Find nearby rooms within 10 miles radius -->
+			<% for room in @room.nearbys(10) %>
+				<div class="col-md-3">
+					<div class="panel panel-default">
+						<div class="panel-heading preview">
+							<%= image_tag room.photos[0].image.url(:medium) %>
+						</div>
+						<div class="panel-body">
+							<%= link_to room.listing_name, room %>
+							(<%= room.distance.round(2) %> miles away)
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>
