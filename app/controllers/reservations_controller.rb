@@ -4,13 +4,13 @@ class ReservationsController < ApplicationController
 
 	def create
 		@reservation = current_user.reservations.create(reservation_params)
-		redirect_to @reservation.room
+		redirect_to @reservation.room, notice: "Your reservation has been created"
 	end
 
 	private
 
 	def reservation_params
-		params.require(:reservations).permit(:start_date, :end_date, :price, :total, :room_id)
+		params.require(:reservation).permit(:start_date, :end_date, :price, :total, :room_id)
 	end
 
 end
