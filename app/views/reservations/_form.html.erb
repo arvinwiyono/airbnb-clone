@@ -7,7 +7,7 @@
 		</div>
 		<div class="col-md-6">
 			<label>Check Out</label>
-			<%= f.text_field :end_date, placeholder: 'End Date', class: 'form-control', disabled: 'true' %>
+			<%= f.text_field :end_date, placeholder: 'End Date', class: 'form-control', disabled: 'true', readonly: 'true'  %>
 		</div>
 	</div>
 
@@ -36,13 +36,47 @@
 <% end %>
 
 <script type="text/javascript">
-	$(function(){
-		$('#reservation_start_date').datepicker({
-			dateFormat: 'dd-mm-yy'
-		});
 
-		$('#reservation_end_date').datepicker({
-			dateFormat: 'dd-mm-yy'
+	function unavailable(date) {
+		dmy = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
+		return [$.inArray(dmy, unavailableDates) == -1];
+	};
+
+	$(function(){
+		unavailableDates = [];
+		$.ajax({
+			url: '/preload',
+			data: {'room_id': <%= @room.id %>},
+			dataType: 'json',
+			success: function(data){
+				$.each(data, function(arrID, arrValue){
+					for(var d = new Date(arrValue.start_date); d <= new Date(arrValue.end_date); d.setDate(d.getDate()+1)){
+						unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
+					}
+				});
+
+				$('#reservation_start_date').datepicker({
+					dateFormat: 'dd-mm-yy',
+					minDate: 0,
+					maxDate: '3m',
+					beforeShowDay: unavailable,
+					onSelect: function(selected){
+						$('#reservation_end_date').datepicker("option", "minDate", selected);
+						$('#reservation_end_date').attr('disabled', false);
+					}
+				});
+
+				$('#reservation_end_date').datepicker({
+					dateFormat: 'dd-mm-yy',
+					minDate: 0,
+					maxDate: '3m',
+					beforeShowDay: unavailable,
+					onSelect: function(selected){
+						$('#reservation_start_date').datepicker("option", "maxDate", selected);
+
+					}
+				});
+			}
 		});
 	});
 </script>

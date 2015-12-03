@@ -7,6 +7,13 @@ class ReservationsController < ApplicationController
 		redirect_to @reservation.room, notice: "Your reservation has been created"
 	end
 
+	def preload
+		room = Room.find(params[:room_id])
+		today = Date.today
+		reservations = room.reservations.where("start_date > ? OR end_date >= ?", today, today)
+		render json: reservations
+	end
+
 	private
 
 	def reservation_params
